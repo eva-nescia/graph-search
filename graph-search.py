@@ -19,7 +19,7 @@ class StackFrontier:
         for node in self.frontier:
             if node.state == state_name:
                 return True
-            return False
+        return False
         
     def remove(self):
         if not self.empty():
@@ -60,7 +60,7 @@ def graph_search(graph, start, goal, frontier):
             neigbours_to_add = neigbours
             
         for neighbour in neigbours_to_add:
-            if not frontier.contains_state(neigbours) and neighbour not in explored:
+            if not frontier.contains_state(neighbour) and neighbour not in explored:
                 child = Node(state=neighbour, parent=node)
                 frontier.add_node(child)
 
